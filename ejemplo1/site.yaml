@@ -1,0 +1,7 @@
+- hosts: servidores
+  become: true
+  tasks:
+    - name: "Comprobamos si tiene conectividad"
+      ansible.builtin.ping:
+    - name: "Actualizamos el sistema"
+      apt: update_cache=yes upgrade=yes
