@@ -1,6 +1,6 @@
 # ansible_ejemplos
 
-Ejemplos de playbooks de ansible para los alumnos de ASIR del IES Gonzalo NAzareno
+Ejemplos de playbooks de ansible para los alumnos de ASIR del IES Gonzalo Nazareno.
 
 ## Ejemplo1: Playbook sencillo
 

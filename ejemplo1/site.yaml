@@ -3,7 +3,7 @@
   tasks:
       # No sirve para nada, realizamos un ping
     - name: "Comprobamos si tiene conectividad"
-      ansible.builtin.ping:
+      ping:
       # Actualizamos los paquetes apt update;apt upgrade
     - name: "Actualizamos el sistema"
       apt: update_cache=yes upgrade=yes
@@ -13,7 +13,7 @@
         name: git
       # Copia un fichero a la máquina remoto
     - name: "Copiar fichero al servidor remoto"
-      ansible.builtin.copy:
+      copy:
         src: files/foo.conf
         dest: /etc/foo.conf
         owner: root
