@@ -12,7 +12,11 @@ Primer ejemplo sencillo, se usa un playbook sin roles. Se configura el acceso a 
     
     Debe salir el mensaje "pong" en verde.
 
-* El ordenador que estamos configurando debe tener instalado "sudo" y el usuario que estamos usando para acceder debe estar configurado para poder usar sudo sin que le pida la contraseña. De esta manera cuando se tenga que realizar una tarea en la que se necesite derechos de root, el usuario podrá usar sudo (esto se indica en el fichero `site.yaml` con `become: true`).
+* El ordenador que estamos configurando debe tener instalado "sudo" y el usuario que estamos usando para acceder debe estar configurado para poder usar sudo sin que le pida la contraseña (otra opción sería utilizar el parámtro `-K` para que nos pida la contraseña del usuario a la hora de ejecutar el playbook). De esta manera cuando se tenga que realizar una tarea en la que se necesite derechos de root, el usuario podrá usar sudo (esto se indica en el fichero `site.yaml` con `become: true`).
+
+Para ejecutar el playbook:
+
+        ansible-playbook site.yaml
 
 Veamos las tareas y los módulos utilizados en el playbook (fichero `site.yaml`):
 
@@ -29,5 +33,16 @@ Veamos las tareas y los módulos utilizados en el playbook (fichero `site.yaml`)
     **Busca la manera de instalar varios paquetes.**
 
 * Copiamos un fichero al ordenador remoto, para ello usamos el módulo `copy`.
+
+
+## Ejemplo 2: Playbook con variables y templates
+
+
+
+## Ejemplo 3: Playbook con roles
+
+## Ejemplo 4: Playbook para gestionar servicios. Handlers
+
+
 
 
