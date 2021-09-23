@@ -71,6 +71,26 @@ Veamos las tareas y los módulos utilizados en el playbook (fichero `site.yaml`)
 
 ## Ejemplo 3: Playbook con roles
 
+Hemos escrito el inventario en formato yaml. En ele ejemplo anterior estaba escrito en ini.
+
+Tal como hemos definido las tareas en los dos ejemplos anteriores, no puedo indicar que tareas hay que hacer para nodos distintos que esten agrupados en distintos grupos. Para solucionarlo vamos a usar los **roles**, que nos permiten organizar las tareas para ejecutarlas en todos los nodos, o en un grupo de nodos en concreto. Además los roles me dan la posibilidad de reutilización de código. Si hago un rol para instalar un servidor web apache, ese rol lo puedo a volver a usar en otro proyecto en que tenga que hacer la misma operación.
+
+Podemos ver que en el fichero `site.yaml`, vamos a ejecutar 3 roles:
+
+* El rol `commons` para todos los nodos (grupo `all`).
+* El rol `apache2` Para todos los nodos del grupo `servidores_web`.
+* El rol `mariadb` Para todos los nodos del grupo `servidores_bd`.
+
+Los roles se van a definir en el directorio `roles`. Se creará un directorio para cada rol, que se llamará igual al nombre que hemos puesto el rol en el fichero `site.yaml` y contendra las tareas, ficheros, templates,... necesario para llevar a cabo este rol.
+
+Por lo tanto dentro de la carpeta del rol, podremos tener algunas de estas carpetas:
+
+* `tasks`: Contiene el yaml con las tareas.
+* `files`: Contiene los ficheros que vamos a copiar a los nodos con el módulo `copy`.
+* `templates`: Contiene las plantillas que vamos a copiar a los nodos con el módulo `template`.
+* ...
+
+
 ## Ejemplo 4: Playbook para gestionar servicios. Handlers
 
 
