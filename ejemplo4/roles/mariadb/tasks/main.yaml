@@ -1,0 +1,19 @@
+- name: ensure mariadb is installed
+  apt:
+    pkg: 
+      - mariadb-server
+      - python3-mysqldb
+
+- name: create database wordpress
+  mysql_db: name={{bd_name}} state=present
+
+- name: create user mysql wordpress
+  mysql_user: name={{bd_user}} host={{ item }} password={{bd_pass}} priv={{bd_name}}.*:ALL,GRANT
+  with_items:
+    - localhost
+
+- name: mariadb listen in all interfaces
+  lineinfile: dest=/etc/mysql/mariadb.conf.d/50-server.cnf regexp="^bind-address            = 127.0.0.1" line="bind-address            = 0.0.0.0" state=present
+  notify:
+    - restart mariadb
+  
