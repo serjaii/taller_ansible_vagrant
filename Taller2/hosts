@@ -1,0 +1,14 @@
+all:
+  children:
+    servidores_web:
+      hosts:
+        nombre_de_la_primera_maquina: 
+          ansible_ssh_host: 
+          ansible_ssh_user: 
+          ansible_ssh_private_key_file:
+    servidores_bd:
+      hosts:
+        nombre_de_la_segunda_maquina: 
+          ansible_ssh_host:
+          ansible_ssh_user:
+          ansible_ssh_private_key_file:

@@ -1,0 +1,14 @@
+- hosts: 
+  become: true
+  roles:
+   - role: 
+
+- hosts: 
+  become: true
+  roles:
+   - role: 
+
+- hosts: 
+  become: true
+  roles:
+   - role: 
