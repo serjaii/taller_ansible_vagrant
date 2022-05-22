@@ -1,4 +1,4 @@
-# Ejemplos ansible
+# Taller ansible-vagrant
 
-Ejemplos para el trabajo de los talleres de ansible.
+Ficheros para la realización de los talleres sobre ansible y vagrant.
 
