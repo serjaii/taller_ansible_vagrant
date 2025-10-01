@@ -3,7 +3,8 @@ all:
     servidores:
       hosts:
         nodo1: 
-          ansible_ssh_host: 
-          ansible_ssh_user:  
-          ansible_ssh_private_key_file: 
+          ansible_ssh_host: 192.168.122.179
+          ansible_ssh_user:  usuario
+          ansible_ssh_private_key_file: /home/serjaii/.ssh/id_ed25519
+
     
